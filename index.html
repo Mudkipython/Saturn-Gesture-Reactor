@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Saturn Gesture Reactor</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+    <video id="webcam" class="input-video" autoplay playsinline muted></video>
+
+    <div id="startOverlay" class="start-overlay">
+      <div class="start-card">
+        <h2>开始前操作提示</h2>
+        <p>建议竖屏握机，手掌与摄像头保持 30-60cm。</p>
+        <ul class="gesture-list">
+          <li><span class="g-icon">🤏</span><span>捏合：缩放土星</span></li>
+          <li><span class="g-icon">✋</span><span>张掌：扩散环带</span></li>
+          <li><span class="g-icon">✊</span><span>握拳：触发混沌</span></li>
+          <li><span class="g-icon">☝️</span><span>单指：调整倾角</span></li>
+          <li><span class="g-icon">🤟</span><span>L手势：旋转环带（替代四指）</span></li>
+          <li><span class="g-icon">✌️</span><span>2指（V）：切换电影机位</span></li>
+          <li><span class="g-icon">🖖</span><span>3指：时间跃迁</span></li>
+          <li><span class="g-icon">👌</span><span>OK：稳定轨道</span></li>
+          <li><span class="g-icon">🤘</span><span>摇滚手势：环旋加速</span></li>
+        </ul>
+        <div class="start-actions">
+          <button id="startBtn" class="start-btn">开始体验</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-panel">
+      <h1>SATURN FIELD</h1>
+      <p class="sub">Cinematic Space + Multi Gesture Control</p>
+      <div class="row"><span>Gesture</span><span id="gestureValue">--</span></div>
+      <div class="row"><span>Action</span><span id="actionValue">Booting</span></div>
+      <div class="row"><span>Mode</span><span id="modeValue">Booting</span></div>
+      <div class="row"><span>FPS</span><span id="fpsValue">--</span></div>
+    </div>
+
+    <button id="fullscreenBtn" class="fs-btn">全屏沉浸</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
