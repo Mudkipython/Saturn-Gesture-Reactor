@@ -42,3 +42,21 @@ Hand gestures control scaling, diffusion, chaos, camera mode, and orbit dynamics
 2. Go to the project folder:
    ```bash
    cd "Three.js Demo"
+3. Start a local static server:
+   python3 -m http.server 8000
+   Open:
+   http://localhost:8000
+4. Click Start Experience and allow camera access.
+
+## Project Structure
+Three.js Demo/
+├─ index.html
+├─ styles.css
+├─ app.js
+├─ netlify.toml
+└─ README_NETLIFY.md
+
+## Notes
+1. Camera access requires HTTPS or localhost.
+2. For best tracking on mobile, keep your hand in frame and at moderate distance.
+3. If FPS drops, reduce device pixel ratio or particle counts.
